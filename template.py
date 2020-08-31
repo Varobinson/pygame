@@ -4,7 +4,6 @@ pygame.init()
 pygame.mixer.init()
 file = ''
 screen = pygame.display.set_mode((598,400))
-
 pygame.display.set_caption('My Game')
 
 score = 0
@@ -15,9 +14,8 @@ pygame.mixer.music.play(-1)
  
 #uplaoding character images to lists so i can call them through indexes
 #when moving
-walk_right = [pygame.image.load('R1.png'), pygame.image.load('R2.png'), pygame.image.load('R3.png'), pygame.image.load('R4.png'), pygame.image.load('R5.png'), pygame.image.load('R6.png'), pygame.image.load('R7.png'), pygame.image.load('R8.png'), pygame.image.load('R9.png')]
-
-walk_left = [pygame.image.load('L1.png'), pygame.image.load('L2.png'), pygame.image.load('L3.png'), pygame.image.load('L4.png'), pygame.image.load('L5.png'), pygame.image.load('L6.png'), pygame.image.load('L7.png'), pygame.image.load('L8.png'), pygame.image.load('L9.png')]
+walk_right = [pygame.image.load('R%s.png' % frame)for frame in range(1, 10)]
+walk_left = [pygame.image.load('L%s.png' % frame)for frame in range(1, 10)] 
 bg = pygame.image.load('bg.jpg')
 char = pygame.image.load('standing.png')
 #Game clock
@@ -93,7 +91,6 @@ class Ball:
 
     def hit(self):
         print('hit')
-        print(score)
         pass
 
 
